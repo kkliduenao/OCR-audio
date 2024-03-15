@@ -9,8 +9,9 @@ import glob
 from gtts import gTTS
 
 
-st.title("Reconocimiento óptico de Caracteres")
-img_file_buffer = st.camera_input("Toma una Foto")
+st.title("Interfaz de Reconocimiento óptico de Caracteres")
+st.subheader("Hello!")
+img_file_buffer = st.camera_input("Toma una foto y convirtamos tu imágen en texto.")
 
 with st.sidebar:
       filtro = st.radio("Aplicar Filtro",('Con Filtro', 'Sin Filtro'))
@@ -33,12 +34,7 @@ if img_file_buffer is not None:
     except:
       pass
 
-    st.subheader("Texto a audio.")
-    st.write('Las interfaces de texto a audio son fundamentales en las interfaces multimodales ya que permiten '  
-         'una comunicación más accesible y natural, facilitando la inclusión de personas con discapacidades ' 
-         ' visuales y permitiendo la interacción en situaciones donde no es posible leer texto. Estas interfaces '  
-         ' también impulsan tecnologías emergentes como los asistentes de voz inteligentes, haciendo que la tecnología ' 
-         ' sea más accesible e intuitiva para todos los usuarios')
+    st.subheader("Ahora convirtamos tu texto a audio.")
            
 
     text = pytesseract.image_to_string(img_rgb)
